@@ -42,7 +42,7 @@ public class UserLoginTest {
 
     @Test
     void shouldReturnErrorIfUserIsBlocked() {
-        var user = getUser("blocked");
+        var user = getRegisteredUser("blocked");
         $("[data-test-id='login'] input").setValue(user.getLogin());
         $("[data-test-id='password'] input").setValue(user.getPassword());
         $("button.button").click();
