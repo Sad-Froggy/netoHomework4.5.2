@@ -48,7 +48,7 @@ public class DataGenerator {
                 RegistrationDto user = getUser(status);
                 given()
                         .spec(spec)
-                        .body(new RegistrationDto("vasya", "password", "active")) // передаём в теле объект, который будет преобразован в JSON
+                        .body(new RegistrationDto(user.login, user.password, status)) // передаём в теле объект, который будет преобразован в JSON
                         .when()
                         .post("/api/system/users")
                         .then()
